@@ -12,8 +12,8 @@ export default function About() {
       <div className={s.about__details}>
         {/* <div className={s.about__text}> */}
         <h1 className={s.about__title}>
-          Hi, I'm Kevin Collazos. I am Software Developer with a passion for
-          creating beautiful and intuitive experiences. Waiting for a new
+          Hi, I&apos;m Kevin Collazos. I am Software Developer with a passion
+          for creating beautiful and intuitive experiences. Waiting for a new
           challenge.
         </h1>
         {/* </div> */}

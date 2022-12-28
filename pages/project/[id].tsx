@@ -47,10 +47,10 @@ function ProjectInfo() {
         </div>
         {project?.site || project?.github ? (
           <div className={s.projectInfo__links}>
-            <a href={`${project?.site}`} target="_blank">
+            <a href={`${project?.site}`} target="_blank" rel="noreferrer">
               <div className={s.projectInfo__button}>Live site</div>
             </a>
-            <a href={`${project?.github}`} target="_blank">
+            <a href={`${project?.github}`} target="_blank" rel="noreferrer">
               <div className={s.projectInfo__button}>GitHub</div>
             </a>
           </div>

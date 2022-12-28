@@ -17,19 +17,27 @@ export const Footer = () => {
               <span className={s.point}>◘</span> kevcollazos@gmail.com
             </p>
           </a>
-          <a href="https://www.instagram.com/kcollazos_/" target="_blank">
+          <a
+            href="https://www.instagram.com/kcollazos_/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <p className={s.links__text}>
               <span className={s.point}>◘</span> Instagram: @kcollazos_
             </p>
           </a>
         </div>
         <div className={s.links}>
-          <a href="https://www.linkedin.com/in/kevcollazos/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/kevcollazos/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <p className={s.links__text}>
               <span className={s.point}>◘</span> LinkedIn: @kevcollazos
             </p>
           </a>
-          <a href="https://github.com/xKeCo" target="_blank">
+          <a href="https://github.com/xKeCo" target="_blank" rel="noreferrer">
             <p className={s.links__text}>
               <span className={s.point}>◘</span> Github: @xKeCo
             </p>
