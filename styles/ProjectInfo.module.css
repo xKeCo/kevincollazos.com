@@ -1,0 +1,116 @@
+.projectInfo__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  transition: var(--transition);
+}
+
+.projectInfo__title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.projectInfo__info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  transition: var(--transition);
+}
+
+.projectInfo__description {
+  max-width: 200px;
+}
+
+.projectInfo__info__title {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  transition: var(--transition);
+}
+
+.projectInfo__info__item {
+  font-size: clamp(1rem, 1rem, 1.5rem);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.projectInfo__DateType {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.projectInfo__links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.projectInfo__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  font-size: clamp(1rem, 1rem, 1.5rem);
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.projectInfo__button__icon:hover {
+  fill: white;
+}
+
+.projectInfo__button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+.projectInfo__mainImage {
+  position: static;
+  width: 100%;
+  text-align: center;
+}
+
+.projectInfo__image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.projectInfo__mainImage {
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 450px) {
+  .projectInfo__info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .projectInfo__description {
+    max-width: 100%;
+  }
+
+  .projectInfo__DateType {
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .projectInfo {
+    padding-top: 100px;
+  }
+}

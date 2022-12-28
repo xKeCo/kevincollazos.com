@@ -1,25 +1,39 @@
 // Styles
+import { useRouter } from "next/router";
 import s from "./Footer.module.css";
 
 export const Footer = () => {
+  const router = useRouter();
+  const pathname = router.pathname;
+
   return (
-    <div className={s.footer}>
+    <div
+      className={pathname === "/" ? `${s.footer} ${s.sticky}` : `${s.footer}`}
+    >
       <div className={s.footer__container__left}>
         <div className={s.links}>
-          <p>
-            <span className={s.point}>◘</span> kevcollazos@gmail.com
-          </p>
-          <p>
-            <span className={s.point}>◘</span> Instagram: @kcollazos_
-          </p>
+          <a href="mailto: kevcollazos@gmail.com">
+            <p className={s.links__text}>
+              <span className={s.point}>◘</span> kevcollazos@gmail.com
+            </p>
+          </a>
+          <a href="https://www.instagram.com/kcollazos_/" target="_blank">
+            <p className={s.links__text}>
+              <span className={s.point}>◘</span> Instagram: @kcollazos_
+            </p>
+          </a>
         </div>
         <div className={s.links}>
-          <p>
-            <span className={s.point}>◘</span> LinkedIn: @kevcollazos
-          </p>
-          <p>
-            <span className={s.point}>◘</span> Github: @xKeCo
-          </p>
+          <a href="https://www.linkedin.com/in/kevcollazos/" target="_blank">
+            <p className={s.links__text}>
+              <span className={s.point}>◘</span> LinkedIn: @kevcollazos
+            </p>
+          </a>
+          <a href="https://github.com/xKeCo" target="_blank">
+            <p className={s.links__text}>
+              <span className={s.point}>◘</span> Github: @xKeCo
+            </p>
+          </a>
         </div>
       </div>
       <div className={s.footer__container__right}>
@@ -27,7 +41,7 @@ export const Footer = () => {
           <p>&nbsp;</p>
           <p>
             <span className={s.point}>◘ </span>
-            Kevin Collazos 2023
+            Kevin Collazos | 2023
           </p>
         </div>
       </div>

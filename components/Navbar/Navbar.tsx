@@ -1,13 +1,18 @@
 import Link from "next/link";
 import s from "./Navbar.module.css";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export const Navbar = () => {
   const links = [
     {
-      name: "Projects",
+      name: "Home",
       path: "/",
     },
+    // {
+    //   name: "Projects",
+    //   path: "#projects-grid",
+    // },
     {
       name: "About",
       path: "/about",
@@ -15,15 +20,22 @@ export const Navbar = () => {
   ];
 
   // Handle responsive menu
-
   const [open, setOpen] = useState(false);
+
+  // Router
+  const router = useRouter();
+  const pathname = router.pathname;
 
   return (
     <div className={s.navbar}>
       <div className={s.navbar__links__container}>
         {links.map((link) => (
           <Link href={link.path} key={link.path}>
-            <div className={`${s.navbar__link} ${link.name}`}>
+            <div
+              className={`${s.navbar__link} ${link.name}  ${
+                pathname === link.path && s.active
+              }`}
+            >
               <p className={s.navbar__link__text}>{link.name}</p>
             </div>
           </Link>
@@ -46,8 +58,13 @@ export const Navbar = () => {
           <div
             key={link.path}
             className={` ${s.navbar__link__responsive} ${
-              link.name === "Projects" ? s.project : s.about
-            } ${open && s.open}`}
+              link.name === "Projects"
+                ? s.project
+                : link.name === "About"
+                ? s.about
+                : s.home
+            } ${open && s.open} ${open && pathname === link.path && s.active}`}
+            onClick={() => setOpen(false)}
           >
             <Link href={link.path}>
               <div>

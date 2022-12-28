@@ -1,12 +1,12 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   display: flex;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   height: 100px;
   width: 100%;
-  z-index: 100;
-  padding: 0 2rem;
+  z-index: 120;
   animation: var(--animation);
 }
 
@@ -34,6 +34,7 @@
   background-color: hsla(0, 0%, 100%, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
+  backdrop-filter: blur(16px);
   cursor: pointer;
   transition: var(--transition);
 }
@@ -59,7 +60,7 @@
   transition: all 500ms ease-out;
 }
 
-.project {
+.home {
   display: block;
   position: relative;
   z-index: 1130;
@@ -71,10 +72,22 @@
   backdrop-filter: blur(16px);
 }
 
-.about {
+.project {
   display: block;
   position: relative;
   z-index: 1120;
+  transform: translate3d(-160px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  width: 80px;
+  transition: all 500ms ease-out;
+  backdrop-filter: blur(16px);
+}
+
+.about {
+  display: block;
+  position: relative;
+  z-index: 1110;
   transform: translate3d(-160px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
@@ -99,6 +112,11 @@
   color: #000;
 }
 
+.active {
+  background-color: white;
+  color: #000;
+}
+
 .navbar__link__text {
   font-weight: 400;
   font-size: 14px;
@@ -117,7 +135,7 @@
 
 @media screen and (max-width: 1024px) {
   .navbar {
-    padding: 0 1.25rem;
+    position: fixed;
   }
 
   .navbar__links__container__responsive {

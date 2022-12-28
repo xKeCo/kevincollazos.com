@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 200px);
+  margin-bottom: 100px;
 }
 
 .hero {
+  position: fixed;
   animation: var(--animation);
   transition: var(--transition);
 }
@@ -52,7 +54,7 @@
 } */
 
 .main__text {
-  font-size: 6vw;
+  font-size: clamp(2.3rem, 6vw, 8rem);
   font-weight: 400;
   letter-spacing: normal;
   transition: var(--transition);
@@ -114,14 +116,21 @@
   transition: var(--transition);
 }
 
+.cards {
+  z-index: 1;
+}
+
 @media screen and (max-width: 1400px) {
-  .main__text {
+  /* .main__text {
     font-size: 7.5vw;
-  }
+  } */
 }
 @media screen and (max-width: 1024px) {
-  .main__text {
+  /* .main__text {
     font-size: 9.5vw;
+  } */
+  .main {
+    height: 100vh;
   }
 }
 @media screen and (max-width: 768px) {
@@ -170,11 +179,8 @@
 }
 
 .card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  max-width: 300px;
+  transition: all 200ms ease-out;
 }
 
 .card span {

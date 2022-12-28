@@ -13,9 +13,11 @@ export const Layout = ({ children, title }: props) => {
   return (
     <>
       <SEO title={title} />
-      <Navbar />
-      <div className={s.layout}>{children}</div>
-      <Footer />
+      <div className={s.layout}>
+        <Navbar />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 };
