@@ -8,6 +8,9 @@ import s from "/styles/ProjectInfo.module.css";
 // Hooks
 import { useProjectByID } from "../../hooks/useProjectByID";
 
+// LocalComponents
+import { ProjectDetails, SEO } from "../../components";
+
 // Image Zoom
 import Zoom from "react-medium-image-zoom";
 
@@ -19,59 +22,75 @@ function ProjectInfo() {
   const { project } = useProjectByID(id);
 
   return (
-    <div className={s.projectInfo}>
-      <div className={s.projectInfo__details}>
-        <h1 className={s.projectInfo__title}>{project?.fullTitle}</h1>
-
-        <div className={s.projectInfo__info}>
-          <div className={s.projectInfo__description}>
-            <p className={s.projectInfo__info__title}>DESCRIPTION</p>
-            <p className={s.projectInfo__info__item}>{project?.description}</p>
+    <>
+      <SEO title={`${project?.fullTitle} | Project`} />
+      <div className={s.projectInfo}>
+        <ProjectDetails
+          fullTitle={project?.fullTitle}
+          description={project?.description}
+          type={project?.type || []}
+          year={project?.year}
+          site={project?.site}
+          github={project?.github}
+        />
+        <div className={s.projectInfo__mainImage}>
+          <Zoom zoomMargin={16}>
+            <Image
+              className={s.projectInfo__image}
+              src={project?.mainImage || "/images/placeholder.png"}
+              alt={project?.alt || "mainImage"}
+              placeholder="blur"
+              blurDataURL={"/images/placeholder.png"}
+              // width={1920}
+              // height={1000}
+              fill
+              priority
+            />
+          </Zoom>
+        </div>
+        {project?.video && (
+          <div
+            className={s.projectInfo__video}
+            style={{
+              backgroundColor: project?.videoBgColor,
+            }}
+          >
+            <div className={s.projectInfo__video__container}>
+              <video
+                className={s.projectInfo__video__item}
+                src={project.video}
+                playsInline
+                autoPlay
+                loop
+                muted
+                width="100%"
+              />
+            </div>
           </div>
-
-          <div className={s.projectInfo__DateType}>
-            <div className={s.projectInfo__type}>
-              <p className={s.projectInfo__info__title}>TYPE</p>
-              {project?.type.map((type) => (
-                <p key={type} className={s.projectInfo__info__item}>
-                  {type}
-                </p>
+        )}
+        {project?.images && (
+          <div className={s.projectInfo__imagePhone}>
+            <div className={s.projectInfo__imagePhone__item}>
+              {project.images.map((image) => (
+                <Zoom zoomMargin={16} key={image.id}>
+                  <img
+                    className={s.projectInfo__imagePhone__image}
+                    src={image.image}
+                    alt="mainImage"
+                    // placeholder="blur"
+                    // blurDataURL={"/images/placeholder.png"}
+                    width="100%"
+                    // width={1170}
+                    // height={2224}
+                    // priority
+                  />
+                </Zoom>
               ))}
             </div>
-
-            <div className={s.projectInfo__year}>
-              <p className={s.projectInfo__info__title}>YEAR</p>
-              <p className={s.projectInfo__info__item}>{project?.year}</p>
-            </div>
           </div>
-        </div>
-        {project?.site || project?.github ? (
-          <div className={s.projectInfo__links}>
-            <a href={`${project?.site}`} target="_blank" rel="noreferrer">
-              <div className={s.projectInfo__button}>Live site</div>
-            </a>
-            <a href={`${project?.github}`} target="_blank" rel="noreferrer">
-              <div className={s.projectInfo__button}>GitHub</div>
-            </a>
-          </div>
-        ) : null}
+        )}
       </div>
-      <div className={s.projectInfo__mainImage}>
-        <Zoom zoomMargin={16}>
-          <Image
-            className={s.projectInfo__image}
-            src={project?.src || "/images/placeholder.png"}
-            alt="mainImage"
-            placeholder="blur"
-            blurDataURL={"/images/placeholder.png"}
-            // width={1920}
-            // height={1000}
-            fill
-            priority
-          />
-        </Zoom>
-      </div>
-    </div>
+    </>
   );
 }
 

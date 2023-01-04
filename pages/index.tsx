@@ -2,24 +2,25 @@
 import s from "../styles/Home.module.css";
 
 // Local Components
-import { CardView, Layout } from "../components";
+import { CardView, SEO } from "../components";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
-  const { scrollYProgress } = useScroll({ offset: ["0px", "300px"] });
+  const { scrollYProgress } = useScroll({ offset: ["0px", "450px"] });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
 
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
     <>
-      {/* <Layout title="Home"> */}
+      <SEO title="Kevin Collazos" />
+
       <div className={s.main}>
         <motion.div className={s.hero} style={{ opacity, scale }}>
           <div className={`${s.main__container}`}>
             <div className={`${s.main__links}`}>
-              <a href="#" className={`${s.email}`}>
+              <a href="mailto:kevcollazos@gmail.com" className={`${s.email}`}>
                 <div className={`${s.letters} `}>
                   <h1 className={s.main__text}>
                     <span className={`${s.letter} ${s.l0} ${s.point}`}>◘</span>
@@ -32,7 +33,11 @@ export default function Home() {
                   </h1>
                 </div>
               </a>
-              <a href="" className={`${s.cv}`}>
+              <a
+                href="https://drive.google.com/file/d/1lrvMPPGev59ktUDTAdb4wu0M7KQ3zNcw/view?usp=share_link"
+                className={`${s.cv}`}
+                rel="noreferrer"
+              >
                 <div className={`${s.letters} `}>
                   <h1 className={s.main__text}>
                     <span className={`${s.letter} ${s.l1} ${s.point}`}>◘</span>
@@ -52,7 +57,7 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-      {/* </Layout> */}
+
       <CardView />
     </>
   );

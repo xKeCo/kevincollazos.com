@@ -37,14 +37,27 @@
   transition: var(--transition);
 }
 
+.about__image__container {
+  position: relative;
+  width: 100%;
+  text-align: end;
+  max-width: 550px;
+  animation: var(--animation);
+  transition: var(--transition);
+}
+
+.about__image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  transition: var(--transition);
+}
+
 @media screen and (max-width: 1024px) {
   .about {
     padding-top: 100px;
   }
-
-  /* .about__title {
-    font-size: 1.5rem;
-  } */
 
   .about__text {
     margin-top: 1.5rem;

@@ -6,7 +6,7 @@ import "../styles/mediumZoomStyles.css";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Layout title={"KC"}>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </>

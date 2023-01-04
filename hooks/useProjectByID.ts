@@ -7,19 +7,26 @@ type ProjectData = {
   fullTitle: string;
   description: string;
   status: string;
-  src: string;
+  mainImage: string;
   alt: string;
   type: string[];
   year: string;
   site?: string;
   github?: string;
+  video?: string;
+  videoBgColor?: string;
+  images?: {
+    id: number;
+    image: string;
+    alt: string;
+  }[];
 };
 
 export const useProjectByID = (title: any) => {
   const [project, setProject] = useState<ProjectData>();
 
-  const getProjectByID = (id: string) => {
-    const data = projects.find((project) => project.title === id);
+  const getProjectByID = (title: string) => {
+    const data = projects.find((project) => project.title === title);
 
     setProject(data);
   };

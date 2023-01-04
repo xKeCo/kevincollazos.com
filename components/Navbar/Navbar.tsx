@@ -1,7 +1,12 @@
-import Link from "next/link";
-import s from "./Navbar.module.css";
+// React
 import { useState } from "react";
+
+// Next
+import Link from "next/link";
 import { useRouter } from "next/router";
+
+// Styles
+import s from "./Navbar.module.css";
 
 export const Navbar = () => {
   const links = [

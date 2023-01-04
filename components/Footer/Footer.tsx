@@ -1,5 +1,7 @@
-// Styles
+// Nexts
 import { useRouter } from "next/router";
+
+// Styles
 import s from "./Footer.module.css";
 
 export const Footer = () => {

@@ -1,3 +1,4 @@
+// Next
 import Head from "next/head";
 
 type props = {
@@ -5,7 +6,7 @@ type props = {
 };
 
 export const SEO = ({ title }: props) => {
-  const message = `Kevin Collazos - ${title}`;
+  const message = `${title}`;
   return (
     <Head>
       <title>{message}</title>

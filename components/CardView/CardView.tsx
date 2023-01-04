@@ -1,5 +1,4 @@
 // Local Components
-import Link from "next/link";
 import { Card } from "../Card/Card";
 
 // Styles
@@ -17,7 +16,7 @@ export const CardView = () => {
             key={card.title}
             title={card.title}
             status={card.status}
-            src={card.src}
+            src={card.mainImage}
             alt={card.alt}
           />
         );
