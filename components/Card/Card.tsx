@@ -17,7 +17,12 @@ export const Card = ({ title, status, src, alt }: props) => {
     <div className={s.card}>
       <Link href={`/project/${title}`}>
         <div className={s.card__image__container}>
-          <img src={src} alt={alt} className={s.image} width="100%" />
+          <img
+            src={src || "/images/placeholder.png"}
+            alt={alt}
+            className={s.image}
+            width="100%"
+          />
         </div>
         <div className={s.card__details}>
           <div className={s.card__text}>

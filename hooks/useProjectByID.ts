@@ -1,5 +1,12 @@
+// React
 import { useEffect, useState } from "react";
-import { projects } from "../data/projects";
+// import { projects } from "../data/projects";
+
+// Firebase
+import { db } from "../firebase/firebase";
+
+// Firebase
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 type ProjectData = {
   id: number;
@@ -25,15 +32,37 @@ type ProjectData = {
 export const useProjectByID = (title: any) => {
   const [project, setProject] = useState<ProjectData>();
 
-  const getProjectByID = (title: string) => {
-    const data = projects.find((project) => project.title === title);
+  const [loading, setLoading] = useState(true);
 
-    setProject(data);
+  const [error, setError] = useState(false);
+
+  const getProjectByID = async (title: string) => {
+    try {
+      if (title) {
+        const docRef = collection(db, "projects");
+
+        const q = query(docRef, where("title", "==", title));
+
+        const projectData = await getDocs(q);
+
+        const docs = { ...projectData.docs[0].data() };
+
+        setProject(docs as ProjectData);
+
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+
+      setError(true);
+
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     getProjectByID(title);
   }, [title]);
 
-  return { getProjectByID, project };
+  return { project, error, loading };
 };
