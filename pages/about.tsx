@@ -19,7 +19,7 @@ export default function About() {
           <div className={s.about__image__container}>
             <Image
               className={s.about__image}
-              src="/images/aboutImage.JPG"
+              src="/images/aboutImage.jpg"
               alt="Photo of Kevin Collazos"
               placeholder="blur"
               blurDataURL={"/images/placeholder.png"}
