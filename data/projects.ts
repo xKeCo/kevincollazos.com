@@ -12,6 +12,7 @@ export const projects = [
     type: ["SEO", "Web Design", "Development"],
     site: "https://borealclinicadental.com/",
     github: "https://github.com/xKeCo/borealclinicadental.com",
+    // video: "/projectsAssets/boreal/videos/boreal-new.mp4",
     video: "/projectsAssets/boreal/videos/boreal-new.mp4",
     videoBgColor: "#2db97c",
     images: [
@@ -79,6 +80,23 @@ export const projects = [
     github: "https://github.com/xKeCo/interactive-map",
     video: "/projectsAssets/parqueventos/videos/parqueeventos.mp4",
     videoBgColor: "#182535",
+    images: [
+      {
+        id: 1,
+        image: "/projectsAssets/fitjoe/fitjoePhone1.jpg",
+        alt: "Fitjoe mobile view picture ",
+      },
+      {
+        id: 2,
+        image: "/projectsAssets/fitjoe/fitjoePhone2.jpg",
+        alt: "Fitjoe mobile view picture",
+      },
+      {
+        id: 3,
+        image: "/projectsAssets/fitjoe/fitjoePhone3.jpeg",
+        alt: "Fitjoe mobile view picture",
+      },
+    ],
   },
   {
     id: 4,
@@ -90,7 +108,24 @@ export const projects = [
     alt: "SBSOCIETY project picture",
     year: "2022",
     type: ["Web Design", "Development", "E-commerce"],
-    // video: "",
+    video: "",
     videoBgColor: "#fe91e8",
+    images: [
+      {
+        id: 1,
+        image: "/projectsAssets/fitjoe/fitjoePhone1.jpg",
+        alt: "Fitjoe mobile view picture ",
+      },
+      {
+        id: 2,
+        image: "/projectsAssets/fitjoe/fitjoePhone2.jpg",
+        alt: "Fitjoe mobile view picture",
+      },
+      {
+        id: 3,
+        image: "/projectsAssets/fitjoe/fitjoePhone3.jpeg",
+        alt: "Fitjoe mobile view picture",
+      },
+    ],
   },
 ];
