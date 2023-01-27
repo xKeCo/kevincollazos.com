@@ -50,7 +50,7 @@ export default function Home() {
                     </div>
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1lrvMPPGev59ktUDTAdb4wu0M7KQ3zNcw/view?usp=share_link"
+                    href="https://drive.google.com/file/d/1gGlisGKikmhA-doLovvhvpMIiwcQj9JT/view?usp=share_link"
                     className={`${s.cv}`}
                     rel="noreferrer"
                   >
