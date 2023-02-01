@@ -1,9 +1,11 @@
 // Next
 import Image from "next/image";
 
+// Local Components
+import { SEO } from "../components";
+
 // Styles
 import s from "../styles/About.module.css";
-import { SEO } from "../components";
 
 export default function About() {
   return (

@@ -8,7 +8,17 @@ import { useRouter } from "next/router";
 // Styles
 import s from "./Navbar.module.css";
 
+// Framer motion
+import { motion, useScroll, useTransform } from "framer-motion";
+
 export const Navbar = () => {
+  const { scrollY } = useScroll({ offset: ["0px", "700px"] });
+
+  // Styles when Scroll
+  const translate = useTransform(scrollY, [0, 100], [0, -1]);
+  // const opacity = useTransform(scrollY, [0.1, 1], [1, 0.1]);
+
+  // Navbar Links
   const links = [
     {
       name: "Home",
@@ -36,13 +46,17 @@ export const Navbar = () => {
       <div className={s.navbar__links__container}>
         {links.map((link) => (
           <Link href={link.path} key={link.path}>
-            <div
+            <motion.div
               className={`${s.navbar__link} ${link.name}  ${
                 pathname === link.path && s.active
               }`}
+              style={{
+                // opacity,
+                translate,
+              }}
             >
               <p className={s.navbar__link__text}>{link.name}</p>
-            </div>
+            </motion.div>
           </Link>
         ))}
       </div>

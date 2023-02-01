@@ -1,4 +1,4 @@
-// Nexts
+// Next
 import { useRouter } from "next/router";
 
 // Styles

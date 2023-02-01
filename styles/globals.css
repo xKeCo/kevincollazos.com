@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --animation: fadeIn 1s ease-out;
+  --animation: fadeIn 0.7s ease-out;
+
+  --downUp: downUp 0.7s ease-out;
+  --rightLeft: rightLeft 0.7s ease-out;
 
   --animation--fast: fadeIn 200ms ease-out;
 
@@ -40,6 +43,23 @@
   }
 }
 
+@keyframes downUp {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes rightLeft {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -60,8 +80,8 @@ body {
 }
 
 body {
-  color: white;
-  background: black;
+  color: #e1e1e5;
+  background: #000;
 }
 
 a {

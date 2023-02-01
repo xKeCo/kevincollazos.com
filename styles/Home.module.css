@@ -8,7 +8,7 @@
 
 .hero {
   position: fixed;
-  animation: var(--animation);
+  /* animation: var(--animation); */
   transition: var(--transition);
 }
 

@@ -1,5 +1,5 @@
 // Components
-import { Footer, Navbar, SEO } from "..";
+import { Footer, Navbar } from "..";
 
 // Styles
 import s from "./Layout.module.css";

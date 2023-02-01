@@ -7,6 +7,7 @@ import s from "./CardView.module.css";
 // Porject data
 // import { projects } from "../../data/projects";
 
+// Hooks
 import { useProjects } from "../../hooks";
 
 type cardData = {

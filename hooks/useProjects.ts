@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
+// React
+import { useCallback, useEffect, useState } from "react";
+
+// Firebase db
 import { db } from "../firebase/firebase";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+
+// Firestore
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 
 type ProjectData = {
   id: number;
@@ -32,28 +37,28 @@ export const useProjects = () => {
 
   const [error, setError] = useState(false);
 
-  const getProjects = async () => {
+  const getProjects = useCallback(async () => {
     try {
       const docRef = collection(db, "projects");
 
       const q = query(docRef, orderBy("id", "asc"));
 
-      const querySnapshot = await getDocs(q);
+      onSnapshot(q, (querySnapshot) => {
+        const docs = querySnapshot.docs.map((doc) => doc.data());
 
-      const docs = querySnapshot.docs.map((doc) => doc.data());
-
-      setProject(docs as ProjectData[]);
-      setLoading(false);
+        setProject(docs as ProjectData[]);
+        setLoading(false);
+      });
     } catch (e) {
       console.log(e);
       setError(true);
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     getProjects();
   }, []);
 
-  return { loading, error, projects };
+  return { projects, loading, error };
 };

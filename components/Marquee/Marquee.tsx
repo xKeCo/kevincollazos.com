@@ -1,15 +1,17 @@
+// React
 import { useRef } from "react";
+
+// Framer Motion
 import {
   motion,
   useAnimationFrame,
   useMotionValue,
-  useScroll,
   useSpring,
   useTransform,
-  useVelocity,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
+// Styles
 import s from "./Marquee.module.css";
 
 interface ParallaxProps {
@@ -19,8 +21,6 @@ interface ParallaxProps {
 
 export function Marquee({ children, baseVelocity = 100 }: ParallaxProps) {
   const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(0, {
     damping: 50,
     stiffness: 400,
