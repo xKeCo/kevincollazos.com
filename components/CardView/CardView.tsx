@@ -13,7 +13,7 @@ import { useProjects } from "../../hooks";
 type cardData = {
   title: string;
   status: string;
-  mainImage: string;
+  frontImage: string;
   alt: string;
 };
 
@@ -29,7 +29,7 @@ export const CardView = () => {
               key={card.title}
               title={card.title}
               status={card.status}
-              src={card.mainImage}
+              src={card.frontImage}
               alt={card.alt}
             />
           );

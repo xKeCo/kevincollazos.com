@@ -14,6 +14,7 @@ type ProjectData = {
   description: string;
   status: string;
   mainImage: string;
+  frontImage: string;
   alt: string;
   type: string[];
   year: string;
