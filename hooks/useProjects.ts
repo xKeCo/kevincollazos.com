@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // React
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 // Firebase db
-import { db } from "../firebase/firebase";
+import { db } from '../firebase/firebase';
 
 // Firestore
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 
 type ProjectData = {
   id: number;
@@ -40,9 +41,9 @@ export const useProjects = () => {
 
   const getProjects = useCallback(async () => {
     try {
-      const docRef = collection(db, "projects");
+      const docRef = collection(db, 'projects');
 
-      const q = query(docRef, orderBy("id", "asc"));
+      const q = query(docRef, orderBy('id', 'asc'));
 
       onSnapshot(q, (querySnapshot) => {
         const docs = querySnapshot.docs.map((doc) => doc.data());

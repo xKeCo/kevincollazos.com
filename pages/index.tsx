@@ -1,18 +1,18 @@
-// Styles
-import s from "../styles/Home.module.css";
-
-// Local Components
-import { CardView, Loader, SEO } from "../components";
-
 // Framer Motion
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Hooks
-import { useProjects } from "../hooks";
+import { useProjects } from '../hooks';
+
+// Local Components
+import { CardView, Loader, SEO } from '../components';
+
+// Styles
+import s from '../styles/Home.module.css';
 
 export default function Home() {
   // ScrollY Tracker
-  const { scrollYProgress } = useScroll({ offset: ["0px", "670px"] });
+  const { scrollYProgress } = useScroll({ offset: ['0px', '670px'] });
 
   // Styles when Scroll
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75]);

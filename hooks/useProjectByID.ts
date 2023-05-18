@@ -1,12 +1,12 @@
 // React
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 // import { projects } from "../data/projects";
 
 // Firebase
-import { db } from "../firebase/firebase";
+import { db } from '../firebase/firebase';
 
 // Firebase
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 type ProjectData = {
   id: number;
@@ -39,9 +39,9 @@ export const useProjectByID = (title: any) => {
   const getProjectByID = async (title: string) => {
     try {
       if (title) {
-        const docRef = collection(db, "projects");
+        const docRef = collection(db, 'projects');
 
-        const q = query(docRef, where("title", "==", title));
+        const q = query(docRef, where('title', '==', title));
 
         const projectData = await getDocs(q);
 

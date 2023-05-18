@@ -1,8 +1,8 @@
 // Local Components
-import { Marquee, SEO } from "../components";
+import { Marquee, SEO } from '../components';
 
 // Styles
-import s from "../styles/404.module.css";
+import s from '../styles/404.module.css';
 
 function FourOhFour() {
   return (

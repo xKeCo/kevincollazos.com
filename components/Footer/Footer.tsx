@@ -1,8 +1,8 @@
 // Next
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 // Styles
-import s from "./Footer.module.css";
+import s from './Footer.module.css';
 
 export const Footer = () => {
   const router = useRouter();
@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <div
-      className={pathname === "/" ? `${s.footer} ${s.sticky}` : `${s.footer}`}
+      className={pathname === '/' ? `${s.footer} ${s.sticky}` : `${s.footer}`}
     >
       <div className={s.footer__container__left}>
         <div className={s.links}>

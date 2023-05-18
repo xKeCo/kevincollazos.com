@@ -23,8 +23,6 @@ export default function About() {
               className={s.about__image}
               src="/images/aboutImage.jpg"
               alt="Photo of Kevin Collazos"
-              placeholder="blur"
-              blurDataURL={'/images/placeholder.png'}
               fill
               priority
             />

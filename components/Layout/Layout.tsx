@@ -1,21 +1,21 @@
 // Components
-import { Footer, Navbar } from "..";
+import { Footer, Navbar } from '..';
 
 // Styles
-import s from "./Layout.module.css";
+import s from './Layout.module.css';
 
-type props = {
+type TLayout = {
   children: React.ReactNode;
 };
 
-export const Layout = ({ children }: props) => {
+export const Layout = ({ children }: TLayout) => {
   return (
-    <>
-      <div className={s.layout}>
-        <Navbar />
-        {children}
-        <Footer />
-      </div>
-    </>
+    <div className={s.layout}>
+      <Navbar />
+
+      {children}
+
+      <Footer />
+    </div>
   );
 };

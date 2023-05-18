@@ -1,14 +1,14 @@
 // Local Components
-import { Card } from "../Card/Card";
+import { Card } from '../Card/Card';
 
 // Styles
-import s from "./CardView.module.css";
+import s from './CardView.module.css';
 
 // Porject data
 // import { projects } from "../../data/projects";
 
 // Hooks
-import { useProjects } from "../../hooks";
+import { useProjects } from '../../hooks';
 
 type cardData = {
   title: string;

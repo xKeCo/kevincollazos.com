@@ -1,36 +1,31 @@
 // React
-import { useState } from "react";
+import { useState } from 'react';
 
 // Next
-import Link from "next/link";
-import { useRouter } from "next/router";
-
-// Styles
-import s from "./Navbar.module.css";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 // Framer motion
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+// Styles
+import s from './Navbar.module.css';
 
 export const Navbar = () => {
-  const { scrollY } = useScroll({ offset: ["0px", "700px"] });
+  const { scrollY } = useScroll({ offset: ['0px', '700px'] });
 
   // Styles when Scroll
   const translate = useTransform(scrollY, [0, 100], [0, -1]);
-  // const opacity = useTransform(scrollY, [0.1, 1], [1, 0.1]);
 
   // Navbar Links
   const links = [
     {
-      name: "Home",
-      path: "/",
+      name: 'Home',
+      path: '/',
     },
-    // {
-    //   name: "Projects",
-    //   path: "#projects-grid",
-    // },
     {
-      name: "About",
-      path: "/about",
+      name: 'About',
+      path: '/about',
     },
   ];
 
@@ -77,9 +72,9 @@ export const Navbar = () => {
           <div
             key={link.path}
             className={` ${s.navbar__link__responsive} ${
-              link.name === "Projects"
+              link.name === 'Projects'
                 ? s.project
-                : link.name === "About"
+                : link.name === 'About'
                 ? s.about
                 : s.home
             } ${open && s.open} ${open && pathname === link.path && s.active}`}
