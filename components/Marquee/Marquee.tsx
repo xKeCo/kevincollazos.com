@@ -1,5 +1,5 @@
 // React
-import { useRef } from "react";
+import { useRef } from 'react';
 
 // Framer Motion
 import {
@@ -8,11 +8,11 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "framer-motion";
-import { wrap } from "@motionone/utils";
+  wrap,
+} from 'framer-motion';
 
 // Styles
-import s from "./Marquee.module.css";
+import s from './Marquee.module.css';
 
 interface ParallaxProps {
   children: string;

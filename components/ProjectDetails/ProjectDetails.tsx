@@ -1,5 +1,5 @@
 // Styles
-import s from "./ProjectDetails.module.css";
+import s from './ProjectDetails.module.css';
 
 type props = {
   fullTitle?: string;
@@ -44,14 +44,20 @@ export const ProjectDetails = ({
           </div>
         </div>
       </div>
+
       {site || github ? (
         <div className={s.projectDetails__links}>
-          <a href={`${site}`} target="_blank" rel="noreferrer">
-            <div className={s.projectDetails__button}>Live site</div>
-          </a>
-          <a href={`${github}`} target="_blank" rel="noreferrer">
-            <div className={s.projectDetails__button}>GitHub</div>
-          </a>
+          {site && (
+            <a href={`${site}`} target="_blank" rel="noreferrer">
+              <div className={s.projectDetails__button}>Live site</div>
+            </a>
+          )}
+
+          {github && (
+            <a href={`${github}`} target="_blank" rel="noreferrer">
+              <div className={s.projectDetails__button}>GitHub</div>
+            </a>
+          )}
         </div>
       ) : null}
     </div>

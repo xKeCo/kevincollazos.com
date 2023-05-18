@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 // Next
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 // Styles
-import s from "./Card.module.css";
+import s from './Card.module.css';
 
 type props = {
   title: string;
@@ -18,7 +19,7 @@ export const Card = ({ title, status, src, alt }: props) => {
       <Link href={`/project/${title}`}>
         <div className={s.card__image__container}>
           <img
-            src={src || "/images/placeholder.png"}
+            src={src || '/images/placeholder.png'}
             alt={alt}
             className={s.image}
             width="100%"

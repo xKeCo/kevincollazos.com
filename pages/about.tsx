@@ -1,11 +1,11 @@
 // Next
-import Image from "next/image";
+import Image from 'next/image';
 
 // Local Components
-import { SEO } from "../components";
+import { SEO } from '../components';
 
 // Styles
-import s from "../styles/About.module.css";
+import s from '../styles/About.module.css';
 
 export default function About() {
   return (
@@ -24,12 +24,13 @@ export default function About() {
               src="/images/aboutImage.jpg"
               alt="Photo of Kevin Collazos"
               placeholder="blur"
-              blurDataURL={"/images/placeholder.png"}
+              blurDataURL={'/images/placeholder.png'}
               fill
               priority
             />
           </div>
         </div>
+
         <div className={s.about__description}>
           <p className={s.about__description__text}>
             As a developer, I enjoy being able to create experiences and tools

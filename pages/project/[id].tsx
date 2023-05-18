@@ -1,18 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 // Next
-import { useRouter } from "next/router";
-import Image from "next/image";
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 // Styles
-import s from "/styles/ProjectInfo.module.css";
+import s from '/styles/ProjectInfo.module.css';
 
 // Hooks
-import { useProjectByID } from "../../hooks/useProjectByID";
+import { useProjectByID } from '../../hooks/useProjectByID';
 
 // LocalComponents
-import { Loader, ProjectDetails, SEO } from "../../components";
+import { Loader, ProjectDetails, SEO } from '../../components';
 
 // Image Zoom
-import Zoom from "react-medium-image-zoom";
+import Zoom from 'react-medium-image-zoom';
 
 type imagesData = {
   id: number;
@@ -49,12 +50,8 @@ function ProjectInfo() {
             <Zoom zoomMargin={16}>
               <Image
                 className={s.projectInfo__image}
-                src={project?.mainImage || "/images/placeholder.png"}
+                src={project?.mainImage ?? '/images/placeholder.png'}
                 alt={`${project?.alt}`}
-                placeholder="blur"
-                blurDataURL={"/images/placeholder.png"}
-                // width={1920}
-                // height={1000}
                 fill
                 priority
               />
@@ -80,6 +77,7 @@ function ProjectInfo() {
               </div>
             </div>
           )}
+
           {project?.images && (
             <div className={s.projectInfo__imagePhone}>
               <div className={s.projectInfo__imagePhone__item}>
@@ -89,12 +87,7 @@ function ProjectInfo() {
                       className={s.projectInfo__imagePhone__image}
                       src={image.image}
                       alt="mainImage"
-                      // placeholder="blur"
-                      // blurDataURL={"/images/placeholder.png"}
                       width="100%"
-                      // width={1170}
-                      // height={2224}
-                      // priority
                     />
                   </Zoom>
                 ))}
