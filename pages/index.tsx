@@ -42,15 +42,10 @@ export default function Home() {
             >
               <div className={`${s.main__container}`}>
                 <div className={`${s.main__links}`}>
-                  <a
-                    href="mailto:kevcollazos@gmail.com"
-                    className={`${s.email}`}
-                  >
+                  <a href="mailto:kevcollazos@gmail.com" className={`${s.email}`}>
                     <div className={`${s.letters} `}>
                       <h1 className={s.main__text}>
-                        <span className={`${s.letter} ${s.l0} ${s.point}`}>
-                          ◘
-                        </span>
+                        <span className={`${s.letter} ${s.l0} ${s.point}`}>◘</span>
                         <span className={`${s.blank__space}`}>&nbsp;</span>
                         <span className={`${s.letter} ${s.l1}`}>E</span>
                         <span className={`${s.letter} ${s.l2}`}>m</span>
@@ -61,15 +56,13 @@ export default function Home() {
                     </div>
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1yehfarkm1RnHdUYGUPLhlHGMd6Ut6HIr/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1E3T3URnLCPWLOJPgsJGRZlL4oXPyaKJi/view?usp=sharing"
                     className={`${s.cv}`}
                     rel="noreferrer"
                   >
                     <div className={`${s.letters} `}>
                       <h1 className={s.main__text}>
-                        <span className={`${s.letter} ${s.l1} ${s.point}`}>
-                          ◘
-                        </span>
+                        <span className={`${s.letter} ${s.l1} ${s.point}`}>◘</span>
                         <span className={`${s.blank__space}`}>&nbsp;</span>
                         <span className={`${s.letter} ${s.l2}`}>C</span>
                         <span className={`${s.letter} ${s.l5}`}>V</span>
