@@ -9,9 +9,7 @@ export const Footer = () => {
   const pathname = router.pathname;
 
   return (
-    <div
-      className={pathname === '/' ? `${s.footer} ${s.sticky}` : `${s.footer}`}
-    >
+    <div className={pathname === '/' ? `${s.footer} ${s.sticky}` : `${s.footer}`}>
       <div className={s.footer__container__left}>
         <div className={s.links}>
           <a href="mailto: kevcollazos@gmail.com">
@@ -19,13 +17,9 @@ export const Footer = () => {
               <span className={s.point}>◘</span> kevcollazos@gmail.com
             </p>
           </a>
-          <a
-            href="https://www.instagram.com/kcollazos_/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://twitter.com/kcollazos_" target="_blank" rel="noreferrer">
             <p className={s.links__text}>
-              <span className={s.point}>◘</span> Instagram: @kcollazos_
+              <span className={s.point}>◘</span> X: @kcollazos_
             </p>
           </a>
         </div>
