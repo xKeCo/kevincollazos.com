@@ -56,7 +56,7 @@ export default function Home() {
                     </div>
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1E3T3URnLCPWLOJPgsJGRZlL4oXPyaKJi/view?usp=sharing"
+                    href="https://cv.kevincollazos.com/"
                     className={`${s.cv}`}
                     rel="noreferrer"
                   >
