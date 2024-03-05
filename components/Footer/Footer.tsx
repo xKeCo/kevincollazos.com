@@ -24,11 +24,7 @@ export const Footer = () => {
           </a>
         </div>
         <div className={s.links}>
-          <a
-            href="https://www.linkedin.com/in/kevcollazos/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.linkedin.com/in/kevcollazos/" target="_blank" rel="noreferrer">
             <p className={s.links__text}>
               <span className={s.point}>◘</span> LinkedIn: @kevcollazos
             </p>
@@ -45,7 +41,7 @@ export const Footer = () => {
           <p>&nbsp;</p>
           <p>
             <span className={s.point}>◘ </span>
-            Kevin Collazos | 2023
+            Kevin Collazos | {new Date().getFullYear()}
           </p>
         </div>
       </div>

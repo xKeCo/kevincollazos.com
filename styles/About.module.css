@@ -39,9 +39,7 @@
 }
 
 .about__image__container {
-  position: relative;
   width: 100%;
-  text-align: end;
   max-width: 550px;
   animation: var(--animation);
   transition: var(--transition);

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-2023",
+  "name": "kc-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.0.3",
     "@types/node": "^20.10.1",
     "@types/react": "^18.2.39",
     "@types/react-dom": "^18.2.17",
